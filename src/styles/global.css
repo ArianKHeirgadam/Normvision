@@ -463,3 +463,24 @@ footer li a:hover{color:var(--secondary)}
 
 /* Contact-form anti-spam honeypot: kept out of the visual and keyboard flow. */
 .website-field { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+
+/* Contact page: compact, fluid layout with no placeholder contact columns. */
+.contact{min-width:0;width:100%}
+.contact> *{min-width:0}
+.contact .form{width:100%;max-width:860px;margin-inline:auto;padding:clamp(1rem,3vw,2rem);min-width:0}
+.form,.row2,.field{min-width:0}
+.row2{grid-template-columns:minmax(0,1fr);gap:var(--s2)}
+.field input,.field select,.field textarea{display:block;min-width:0;max-width:100%}
+.field textarea{min-height:170px;line-height:1.6}
+.field-hint{color:var(--muted);font-size:.85rem;line-height:1.5}
+.submit-btn{width:100%;max-width:220px;justify-self:start}
+@media(min-width:600px){
+  .row2{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+  .page-head{padding-top:2.5rem;padding-bottom:2rem}
+  .page-head h1{font-size:clamp(2.1rem,10vw,3rem);overflow-wrap:anywhere}
+  .contact .form{padding:1rem;border-radius:12px}
+  .submit-btn{max-width:none;width:100%}
+  .field input,.field select,.field textarea{padding:.75rem .85rem;font-size:16px}
+}
