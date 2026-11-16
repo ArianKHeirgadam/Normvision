@@ -1,6 +1,6 @@
-import { AppWindow, Server, Code, Wrench, Sparkles, ShieldCheck, CircleCheck, Users, TrendingUp } from 'lucide-react'
+import { AppWindow, Server, Code, Wrench, Sparkles, ShieldCheck, CircleCheck, Users, TrendingUp, Target, Compass } from 'lucide-react'
 
-const icons = { AppWindow, Server, Code, Wrench, Sparkles, ShieldCheck, CircleCheck, Users, TrendingUp }
+const icons = { AppWindow, Server, Code, Wrench, Sparkles, ShieldCheck, CircleCheck, Users, TrendingUp, Target, Compass }
 
 export default function Icon({ name }) {
   const Cmp = icons[name]
