@@ -684,3 +684,78 @@ footer li a:hover{color:var(--secondary)}
 :root:not([data-theme="light"]) .about-principle h3{
   color:#f2f7fb;
 }
+
+
+/* About page — restore the original warm brown / bronze dark palette */
+:root:not([data-theme="light"]) .about-mission{
+  background:linear-gradient(125deg,#1F150C 0%,#24190F 56%,#2B1D10 100%);
+  border-color:rgba(183,167,127,.24);
+}
+:root:not([data-theme="light"]) .about-mission::before{
+  background:radial-gradient(circle,rgba(183,167,127,.16),transparent 70%);
+}
+:root:not([data-theme="light"]) .about-mission::after{
+  background:radial-gradient(circle,rgba(143,121,82,.14),transparent 70%);
+}
+:root:not([data-theme="light"]) .about-principle,
+:root:not([data-theme="light"]) .about-principle-vision{
+  background:linear-gradient(145deg,#24190F 0%,#1F150C 100%);
+  border-color:rgba(183,167,127,.2);
+}
+:root:not([data-theme="light"]) .about-card-icon{
+  background:linear-gradient(135deg,rgba(183,167,127,.18),rgba(143,121,82,.14));
+  color:#D2C29D;
+  border:1px solid rgba(183,167,127,.2);
+}
+:root:not([data-theme="light"]) .about-card-kicker,
+:root:not([data-theme="light"]) .about-eyebrow{
+  color:#C5B58F;
+}
+:root:not([data-theme="light"]) .about-eyebrow::before{
+  background:linear-gradient(90deg,#B7A77F,#8F7952);
+}
+:root:not([data-theme="light"]) .about-value-card{
+  background:linear-gradient(150deg,#24190F,#1F150C);
+  border-color:rgba(183,167,127,.18);
+}
+:root:not([data-theme="light"]) .about-value-card .ic{
+  background:linear-gradient(135deg,rgba(183,167,127,.18),rgba(143,121,82,.14));
+  color:#C5B58F;
+}
+:root:not([data-theme="light"]) .about-value-index{
+  color:rgba(197,181,143,.24);
+}
+:root:not([data-theme="light"]) .about-value-card:hover .about-value-index{
+  color:rgba(197,181,143,.42);
+}
+:root:not([data-theme="light"]) .about-expertise .why{
+  background:linear-gradient(145deg,#24190F,#1F150C);
+  border-color:rgba(183,167,127,.2);
+}
+:root:not([data-theme="light"]) .about-expertise .why:hover{
+  border-color:rgba(197,181,143,.48);
+  box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 0 1px rgba(183,167,127,.08);
+}
+:root:not([data-theme="light"]) .about-expertise .why::before{
+  background:linear-gradient(135deg,#C5B58F,#8F7952);
+  box-shadow:0 0 0 5px rgba(183,167,127,.12);
+}
+:root:not([data-theme="light"]) .about-process .step{
+  background:linear-gradient(145deg,#24190F,#1F150C);
+  border-color:rgba(183,167,127,.18);
+}
+:root:not([data-theme="light"]) .about-process .num{
+  color:#D2C29D;
+  background:linear-gradient(135deg,#2B1D10,#1F150C);
+  border-color:rgba(183,167,127,.42);
+  box-shadow:0 0 0 4px rgba(183,167,127,.07);
+}
+:root:not([data-theme="light"]) .about-process .step::before{
+  background:linear-gradient(90deg,rgba(183,167,127,.72),rgba(143,121,82,.24));
+}
+:root:not([data-theme="light"]) .about-intro .copy p:first-child,
+:root:not([data-theme="light"]) .about-expertise .why h3,
+:root:not([data-theme="light"]) .about-value-card h3,
+:root:not([data-theme="light"]) .about-principle h3{
+  color:#E1DCC9;
+}
