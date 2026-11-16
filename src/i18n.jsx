@@ -71,6 +71,21 @@ const translations = {
   ,'A concept for software that turns a manual, multi-step business process into a guided digital workflow.':'نرم‌افزاری برای تبدیل فرایندهای دستی چندمرحله‌ای به گردش‌کار دیجیتال.'
   ,'A concept for tracking issues, updates, and improvements across a live application.':'راهکاری برای پیگیری مشکلات، به‌روزرسانی‌ها و بهبودهای اپلیکیشن.'
 
+  ,'CONTACT / START A PROJECT':'تماس / شروع یک پروژه'
+  ,'PROJECT DETAILS':'جزئیات پروژه'
+  ,'Tell us a little more':'کمی بیشتر درباره پروژه‌تان بگویید'
+  ,'A few details will help us understand what you need.':'چند جزئیات کوتاه به ما کمک می‌کند نیاز شما را بهتر درک کنیم.'
+  ,'Your name':'نام شما'
+  ,'you@example.com':'you@example.com'
+  ,'Company or organization':'نام شرکت یا سازمان'
+  ,'Select a service':'یک خدمت را انتخاب کنید'
+  ,'Something else / not sure yet':'سایر موارد / هنوز مطمئن نیستم'
+  ,'Choose the area you need help with.':'حوزه‌ای را که در آن به کمک نیاز دارید انتخاب کنید.'
+  ,'Tell us about your goals, requirements, and what you would like to improve…':'درباره هدف‌ها، نیازمندی‌ها و مواردی که می‌خواهید بهبود دهید…'
+  ,'Please include enough detail for us to understand your request.':'لطفاً جزئیات کافی ارائه دهید تا درخواست شما را بهتر درک کنیم.'
+  ,'Your information will only be used to respond to your inquiry.':'اطلاعات شما فقط برای پاسخ‌گویی به درخواستتان استفاده می‌شود.'
+  ,'Sending…':'در حال ارسال…'
+
 }
 
 const LocaleContext = createContext(null)
@@ -89,19 +104,5 @@ export function useLocale() {
   const value = useContext(LocaleContext)
   if (!value) throw new Error('useLocale must be used inside LocaleProvider')
   return value
-  ,'CONTACT / START A PROJECT':'تماس / شروع یک پروژه'
-  ,'PROJECT DETAILS':'جزئیات پروژه'
-  ,'Tell us a little more':'کمی بیشتر درباره پروژه‌تان بگویید'
-  ,'A few details will help us understand what you need.':'چند جزئیات کوتاه به ما کمک می‌کند نیاز شما را بهتر درک کنیم.'
-  ,'Your name':'نام شما'
-  ,'you@example.com':'you@example.com'
-  ,'Company or organization':'نام شرکت یا سازمان'
-  ,'Select a service':'یک خدمت را انتخاب کنید'
-  ,'Something else / not sure yet':'سایر موارد / هنوز مطمئن نیستم'
-  ,'Choose the area you need help with.':'حوزه‌ای را که در آن به کمک نیاز دارید انتخاب کنید.'
-  ,'Tell us about your goals, requirements, and what you would like to improve…':'درباره هدف‌ها، نیازمندی‌ها و مواردی که می‌خواهید بهبود دهید توضیح دهید…'
-  ,'Please include enough detail for us to understand your request.':'لطفاً جزئیات کافی ارائه دهید تا درخواست شما را بهتر درک کنیم.'
-  ,'Your information will only be used to respond to your inquiry.':'اطلاعات شما فقط برای پاسخ‌گویی به درخواستتان استفاده می‌شود.'
-  ,'Sending…':'در حال ارسال…'
 
 }
