@@ -2,10 +2,26 @@ from django.core.management.base import BaseCommand
 from core.models import Project, Service
 
 SERVICES = [
- ('web','Web Application Development','توسعه اپلیکیشن وب','Scalable, responsive, and intuitive web applications designed around your business requirements.','اپلیکیشن‌های وب مقیاس‌پذیر، واکنش‌گرا و ساده برای استفاده، متناسب با نیازهای کسب‌وکار شما.'),
- ('infrastructure','Server & Infrastructure','سرور و زیرساخت','Reliable infrastructure management, server administration, monitoring, and maintenance.','مدیریت زیرساخت قابل اعتماد، راهبری سرور، پایش و نگهداری.'),
- ('custom','Custom Software Development','توسعه نرم‌افزار اختصاصی','Purpose-built software solutions that simplify complex workflows and business operations.','راهکارهای نرم‌افزاری اختصاصی برای ساده‌سازی گردش‌کارهای پیچیده و عملیات کسب‌وکار.'),
- ('support','Maintenance & Technical Support','نگهداری و پشتیبانی فنی','Continuous technical support, system optimization, and long-term software maintenance.','پشتیبانی فنی مستمر، بهینه‌سازی سامانه و نگهداری بلندمدت نرم‌افزار.'),
+ ('web','Web Application Development','توسعه اپلیکیشن وب',
+  'Scalable, responsive, and intuitive web applications designed around your business requirements.',
+  'اپلیکیشن‌های وب مقیاس‌پذیر، واکنش‌گرا و ساده برای استفاده، متناسب با نیازهای کسب‌وکار شما.',
+  'From first wireframe to production release, we build interfaces and back-end services that are easy to use, easy to maintain, and ready to grow.',
+  'از نخستین وایرفریم تا انتشار نهایی، رابط‌ها و سرویس‌های بک‌اندی می‌سازیم که استفاده و نگهداری از آن‌ها آسان است و برای رشد آماده‌اند.'),
+ ('infrastructure','Server & Infrastructure','سرور و زیرساخت',
+  'Reliable infrastructure management, server administration, monitoring, and maintenance.',
+  'مدیریت زیرساخت قابل اعتماد، راهبری سرور، پایش و نگهداری.',
+  'We look after the environments your software runs on, so deployments are predictable and problems are caught early.',
+  'از محیط اجرای نرم‌افزار شما مراقبت می‌کنیم تا استقرارها قابل پیش‌بینی باشند و مشکلات زودتر شناسایی شوند.'),
+ ('custom','Custom Software Development','توسعه نرم‌افزار اختصاصی',
+  'Purpose-built software solutions that simplify complex workflows and business operations.',
+  'راهکارهای نرم‌افزاری اختصاصی برای ساده‌سازی گردش‌کارهای پیچیده و عملیات کسب‌وکار.',
+  'When off-the-shelf tools don’t fit, we build software around the way your team actually works, and integrate it with the systems you already use.',
+  'وقتی ابزارهای آماده پاسخ‌گوی نیازتان نیستند، نرم‌افزار را بر اساس شیوه واقعی کار تیم شما می‌سازیم و با سامانه‌های فعلی یکپارچه می‌کنیم.'),
+ ('support','Maintenance & Technical Support','نگهداری و پشتیبانی فنی',
+  'Continuous technical support, system optimization, and long-term software maintenance.',
+  'پشتیبانی فنی مستمر، بهینه‌سازی سامانه و نگهداری بلندمدت نرم‌افزار.',
+  'Software needs care after launch. We stay available to fix, update, and improve the systems you depend on.',
+  'نرم‌افزار پس از انتشار نیز به مراقبت نیاز دارد. برای رفع ایراد، به‌روزرسانی و بهبود سامانه‌هایی که به آن‌ها متکی هستید، همراهتان می‌مانیم.'),
 ]
 SERVICE_FEATURES = {
  'web': (['Custom Web Applications','Enterprise Platforms','SaaS Development','Responsive Web Experiences','API Development & Integration','Dashboard & Admin Systems'], ['اپلیکیشن‌های وب اختصاصی','پلتفرم‌های سازمانی','توسعه SaaS','تجربه‌های وب واکنش‌گرا','توسعه و یکپارچه‌سازی API','داشبورد و پنل مدیریت']),
@@ -26,10 +42,11 @@ class Command(BaseCommand):
     help = 'Create the initial nORMvis services and demo projects (safe to run repeatedly).'
     def handle(self, *args, **options):
         for i, row in enumerate(SERVICES):
-            category,title,title_fa,desc,desc_fa = row
+            category,title,title_fa,desc,desc_fa,description,description_fa = row
             Service.objects.update_or_create(category=category, defaults={
                 'title':title, 'title_fa':title_fa, 'short_description':desc,
-                'short_description_fa':desc_fa, 'features':SERVICE_FEATURES[category][0],
+                'short_description_fa':desc_fa, 'description':description, 'description_fa':description_fa,
+                'features':SERVICE_FEATURES[category][0],
                 'features_fa':SERVICE_FEATURES[category][1], 'sort_order':i, 'is_active':True,
             })
         for i, row in enumerate(PROJECTS):
