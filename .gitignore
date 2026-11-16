@@ -1,0 +1,30 @@
+﻿# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+*.py[cod]
+
+# Build
+dist/
+build/
+staticfiles/
+media/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Old nested frontend copy
+normvis-site/
