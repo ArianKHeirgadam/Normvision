@@ -1115,3 +1115,25 @@ footer li a:hover{color:var(--secondary)}
 .about-roadmap * {
   font-family: var(--font) !important;
 }
+
+/* Standard mobile navigation controls */
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: .9rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-controls .btn { margin: 0 0 0 auto; width: auto; min-height: 40px; }
+.mobile-controls .theme-toggle { min-height: 40px; }
+@media (max-width: 879px) {
+  .hdr .wrap { gap: .75rem; }
+  .hdr .hdr-actions { margin-inline-start: auto; gap: .45rem; }
+  .hdr .hdr-actions .language-switch { display: none; }
+  .hdr .hdr-actions .theme-toggle { min-height: 40px; padding: 0 .75rem; }
+  .hdr .hdr-actions .theme-toggle span { display: none; }
+  .hdr .hdr-actions .hdr-cta { display: none; }
+  .menu-btn { flex: 0 0 42px; }
+}
