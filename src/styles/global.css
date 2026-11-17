@@ -1118,3 +1118,158 @@ footer li a:hover{color:var(--secondary)}
 .about-roadmap button {
   font-family: inherit;
 }
+
+
+/* Floating dock header navigation — responsive, theme-aware */
+@media (min-width: 880px) {
+  .hdr .wrap { gap: clamp(1rem, 2.2vw, 2rem); }
+  .hdr .brand { flex: 0 0 auto; }
+  .hdr .floating-dock {
+    display: flex !important;
+    flex: 0 1 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 70px;
+    width: max-content;
+    max-width: 100%;
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 23px;
+    background: color-mix(in srgb, var(--surface) 86%, var(--bg));
+    box-shadow: 0 8px 28px rgba(0,0,0,.10);
+    overflow: visible;
+  }
+  .hdr .floating-dock .dock-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 54px;
+    padding: 0;
+    border: 0;
+    border-radius: 16px;
+    color: var(--muted);
+    text-decoration: none;
+    background: transparent;
+    overflow: visible;
+  }
+  .hdr .floating-dock .dock-link::after { display: none; }
+  .dock-icon-wrap {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--text) 8%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--text) 5%, transparent);
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .dock-icon-inner { display: grid; place-items: center; width: 20px; height: 20px; }
+  .dock-icon-inner svg { width: 100%; height: 100%; stroke-width: 1.9; }
+  .dock-link:hover, .dock-link.is-active { color: var(--text) !important; }
+  .dock-link:hover .dock-icon-wrap, .dock-link.is-active .dock-icon-wrap {
+    background: color-mix(in srgb, var(--secondary) 19%, var(--surface));
+    border-color: color-mix(in srgb, var(--secondary) 46%, var(--border));
+  }
+  .dock-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    z-index: 80;
+    width: max-content;
+    max-width: 160px;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--surface);
+    color: var(--text);
+    font: 500 .76rem/1.3 var(--font);
+    white-space: nowrap;
+    box-shadow: 0 8px 22px rgba(0,0,0,.16);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 5px);
+    transition: opacity .18s, transform .18s;
+  }
+  .dock-link:hover .dock-tooltip, .dock-link:focus-visible .dock-tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .dock-mobile-label { display: none; }
+  .hdr .hdr-actions { flex: 0 0 auto; gap: .65rem; }
+}
+@media (max-width: 879px) {
+  .hdr .wrap { gap: .75rem; }
+  .hdr .hdr-actions { margin-inline-start: auto; gap: .45rem; }
+  .hdr .hdr-actions .language-switch { display: none; }
+  .hdr .hdr-actions .theme-toggle { min-height: 40px; padding: 0 .75rem; }
+  .hdr .hdr-actions .theme-toggle span { display: none; }
+  .hdr .hdr-actions .hdr-cta { display: none; }
+  .menu-btn { flex: 0 0 42px; }
+  .mobile-dock-panel {
+    display: block !important;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: 55;
+    padding: 1rem var(--s3) 1.2rem;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 18px 36px rgba(0,0,0,.18);
+  }
+  .mobile-dock-links { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: .45rem; }
+  .mobile-dock-links .dock-link {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    padding: .65rem .15rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    font: inherit;
+    font-size: .7rem;
+  }
+  .mobile-dock-links .dock-link.is-active {
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--secondary) 55%, var(--border));
+    background: color-mix(in srgb, var(--secondary) 13%, var(--surface));
+  }
+  .mobile-dock-links .dock-icon-wrap {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    color: inherit;
+  }
+  .mobile-dock-links .dock-icon-inner { display: grid; width: 22px; height: 22px; }
+  .mobile-dock-links .dock-icon-inner svg { width: 100%; height: 100%; stroke-width: 1.9; }
+  .mobile-dock-links .dock-tooltip { display: none; }
+  .dock-mobile-label { display: block; line-height: 1.2; text-align: center; }
+  .mobile-dock-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .7rem;
+    margin-top: .9rem;
+    padding-top: .9rem;
+    border-top: 1px solid var(--border);
+  }
+  .mobile-dock-controls .btn { margin: 0 0 0 auto; width: auto; min-height: 40px; }
+  .mobile-dock-controls .theme-toggle { min-height: 40px; }
+}
+@media (max-width: 390px) {
+  .hdr .brand { font-size: 1.05rem; gap: .4rem; }
+  .hdr .brand svg { width: 26px; height: 26px; }
+  .mobile-dock-links { gap: .3rem; }
+  .mobile-dock-links .dock-link { font-size: .62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dock-tooltip, .dock-icon-wrap { transition: none !important; }
+}
