@@ -1334,3 +1334,62 @@ main,
 @media(prefers-reduced-motion:reduce){
   .pcard .project-visual{transition:none}
 }
+
+
+/* Warm bronze service-card palette aligned with the nORMvis dark theme */
+/* remove the blue/purple/teal service-card overrides; inherit the site's warm bronze palette */
+.sv-grid .sv-card{
+  border-color:rgba(183,167,127,.22);
+  background:
+    radial-gradient(circle at 92% 8%,rgba(183,167,127,.12),transparent 36%),
+    linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--secondary) 5%,var(--bg)));
+}
+.sv-grid .sv-card::before{
+  border-color:color-mix(in srgb,var(--secondary) 28%,transparent);
+  box-shadow:0 0 0 22px color-mix(in srgb,var(--secondary) 4%,transparent),0 0 0 48px color-mix(in srgb,var(--secondary) 3%,transparent);
+}
+.sv-grid .sv-card:hover{
+  border-color:color-mix(in srgb,var(--secondary) 58%,var(--border));
+  box-shadow:0 22px 55px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--secondary) 12%,transparent);
+}
+.sv-card-index,.sv-card-icon{color:var(--secondary)}
+.sv-card-icon{
+  background:linear-gradient(145deg,color-mix(in srgb,var(--secondary) 15%,var(--surface)),color-mix(in srgb,var(--secondary) 7%,var(--surface)));
+  border-color:color-mix(in srgb,var(--secondary) 28%,var(--border));
+  box-shadow:inset 0 1px rgba(255,255,255,.05),0 8px 22px rgba(0,0,0,.16);
+}
+.sv-card-arrow{background:color-mix(in srgb,var(--secondary) 14%,var(--surface));color:var(--secondary)}
+.sv-card-link{border-color:color-mix(in srgb,var(--secondary) 48%,var(--border))}
+.sv-card-link:hover{color:var(--secondary);border-color:var(--secondary)}
+.sv-card-2,.sv-card-3,.sv-card-4{
+  background:
+    radial-gradient(circle at 90% 12%,color-mix(in srgb,var(--secondary) 11%,transparent),transparent 38%),
+    linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--secondary) 5%,var(--bg)))!important;
+}
+.sv-card-2 .sv-card-index,.sv-card-2 .sv-card-icon,
+.sv-card-3 .sv-card-index,.sv-card-3 .sv-card-icon,
+.sv-card-4 .sv-card-index,.sv-card-4 .sv-card-icon{color:var(--secondary)}
+:root:not([data-theme="light"]) .sv-grid .sv-card{
+  background:
+    radial-gradient(circle at 92% 8%,rgba(183,167,127,.13),transparent 36%),
+    linear-gradient(145deg,#2a2118,#1f150c);
+  border-color:rgba(183,167,127,.2);
+  box-shadow:0 16px 40px rgba(0,0,0,.24);
+}
+:root:not([data-theme="light"]) .sv-grid .sv-card::before{
+  border-color:rgba(183,167,127,.25);
+  box-shadow:0 0 0 22px rgba(183,167,127,.035),0 0 0 48px rgba(183,167,127,.025);
+}
+:root:not([data-theme="light"]) .sv-grid .sv-card:hover{
+  border-color:rgba(183,167,127,.55);
+  box-shadow:0 22px 55px rgba(0,0,0,.32),0 0 0 1px rgba(183,167,127,.1);
+}
+:root:not([data-theme="light"]) .sv-card-icon{
+  background:linear-gradient(145deg,rgba(183,167,127,.17),rgba(225,220,201,.07));
+  border-color:rgba(183,167,127,.28);
+}
+:root:not([data-theme="light"]) .sv-card-content h3,
+:root:not([data-theme="light"]) .sv-card-link{color:#f1eadc}
+:root:not([data-theme="light"]) .sv-card-content p,
+:root:not([data-theme="light"]) .sv-card-label{color:#b9ad98}
+:root:not([data-theme="light"]) .sv-card-arrow{background:rgba(183,167,127,.16);color:#d4c39c}
