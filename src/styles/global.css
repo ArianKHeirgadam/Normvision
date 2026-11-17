@@ -1109,3 +1109,12 @@ footer li a:hover{color:var(--secondary)}
   .about-expertise .why{min-height:0;padding:1.2rem 1rem 1.2rem 3.2rem}
   [dir="rtl"] .about-expertise .why{padding:1.2rem 3.2rem 1.2rem 1rem}
 }
+
+/* Keep every roadmap label and control aligned with the site's typography. */
+.about-roadmap,
+.about-roadmap * {
+  font-family: inherit;
+}
+.about-roadmap button {
+  font-family: inherit;
+}
