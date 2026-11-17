@@ -16,6 +16,7 @@ export function WordmarkFooter({
   columns = [],
   email,
   credit,
+  rightsText = 'All rights reserved.',
   className = '',
   ...props
 }) {
@@ -71,7 +72,7 @@ export function WordmarkFooter({
         </div>
 
         <div className="wordmark-footer-legal">
-          <p>© {year} {legalName || name}. {props.rightsText || 'All rights reserved.'}</p>
+          <p>© {year} {legalName || name}. {rightsText}</p>
           {email && <a href={`mailto:${email}`}>{email}</a>}
           {credit && <a className="wordmark-footer-credit" href={credit.href}>{credit.label}</a>}
         </div>
