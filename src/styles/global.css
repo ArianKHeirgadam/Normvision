@@ -1273,3 +1273,19 @@ footer li a:hover{color:var(--secondary)}
 @media (prefers-reduced-motion: reduce) {
   .dock-tooltip, .dock-icon-wrap { transition: none !important; }
 }
+
+
+/* Mobile dock overrides the legacy accordion navigation link rules. */
+@media (max-width: 879px) {
+  .mobile-dock-panel .mobile-dock-links .dock-link {
+    display: flex;
+    padding: .65rem .15rem;
+    border: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: .7rem;
+  }
+  .mobile-dock-panel .mobile-dock-controls .btn {
+    width: auto;
+    margin-top: 0;
+  }
+}
