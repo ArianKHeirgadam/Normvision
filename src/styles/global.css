@@ -1110,10 +1110,27 @@ footer li a:hover{color:var(--secondary)}
   [dir="rtl"] .about-expertise .why{padding:1.2rem 3.2rem 1.2rem 1rem}
 }
 
-/* Keep every roadmap text element and control on the exact site font stack. */
+/* Keep the roadmap aligned with the active site language font (including Persian). */
 .about-roadmap,
 .about-roadmap * {
-  font-family: var(--font) !important;
+  font-family: inherit !important;
+}
+
+/* Prevent oversized decorative content from creating horizontal page overflow. */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+#root,
+main,
+.about-page {
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Standard mobile navigation controls */
