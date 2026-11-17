@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import Section from '../components/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Button from '../components/Button.jsx'
-import ServiceArt from '../components/ServiceArt.jsx'
+import ProjectVisual from '../components/ProjectVisual.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 import NotFound from './NotFound.jsx'
 import usePageMeta from '../hooks/usePageMeta.js'
@@ -40,7 +40,7 @@ export default function ProjectDetail() {
       </Section>
       <Section style={{ paddingTop: 0 }} wrap="pd">
         <div>
-          <Reveal><ServiceArt id={p.category} /></Reveal>
+          <Reveal><ProjectVisual project={p} detail /></Reveal>
           <Reveal className="copy" delay={0.1}>
             <h2 className="h2" style={{ fontSize: '1.75rem', margin: 'var(--s4) 0 var(--s2)' }}>{t('Overview') }</h2>
             <p>{t(p.overview)}</p>
