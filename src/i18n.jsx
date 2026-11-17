@@ -101,25 +101,7 @@ const translations = {
   ,'Your information will only be used to respond to your inquiry.':'اطلاعات شما فقط برای پاسخ‌گویی به درخواستتان استفاده می‌شود.'
   ,'Sending…':'در حال ارسال…'
 
-}
-
-const LocaleContext = createContext(null)
-export function LocaleProvider({ children }) {
-  const [locale, setLocale] = useState(() => localStorage.getItem('normvis-locale') || 'en')
-  useEffect(() => {
-    document.documentElement.lang = locale === 'fa' ? 'fa' : 'en'
-    document.documentElement.dir = locale === 'fa' ? 'rtl' : 'ltr'
-    document.documentElement.dataset.locale = locale
-    localStorage.setItem('normvis-locale', locale)
-  }, [locale])
-  const value = useMemo(() => ({ locale, setLocale, isFa: locale === 'fa', t: (value) => locale === 'fa' ? (translations[value] || value) : value }), [locale])
-  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
-}
-export function useLocale() {
-  const value = useContext(LocaleContext)
-  if (!value) throw new Error('useLocale must be used inside LocaleProvider')
-  return value
-
+  
   ,'ENGINEERING JOURNEY · NORMVISION':'مسیر مهندسی · NORMVISION'
   ,'A connected path from idea to impact.':'مسیری پیوسته از ایده تا نتیجه.'
   ,'Explore how strategy, design, and engineering move together to create dependable digital solutions.':'ببینید راهبرد، طراحی و مهندسی چگونه در کنار هم راهکارهای دیجیتال قابل اتکا می‌سازند.'
@@ -152,5 +134,24 @@ export function useLocale() {
   ,'We keep an eye on reliability and performance so issues can be identified early.':'قابلیت اطمینان و عملکرد را پایش می‌کنیم تا مشکلات زودتر شناسایی شوند.'
   ,'We support ongoing maintenance, optimization, and new capabilities as needs change.':'با تغییر نیازها، نگهداری مستمر، بهینه‌سازی و افزودن قابلیت‌های تازه را پشتیبانی می‌کنیم.'
   ,'Interactive engineering roadmap with Platform, Design, and Growth tracks':'نقشه راه تعاملی مهندسی با مسیرهای پلتفرم، طراحی و رشد'
+  
+  }
 
 }
+
+const LocaleContext = createContext(null)
+export function LocaleProvider({ children }) {
+  const [locale, setLocale] = useState(() => localStorage.getItem('normvis-locale') || 'en')
+  useEffect(() => {
+    document.documentElement.lang = locale === 'fa' ? 'fa' : 'en'
+    document.documentElement.dir = locale === 'fa' ? 'rtl' : 'ltr'
+    document.documentElement.dataset.locale = locale
+    localStorage.setItem('normvis-locale', locale)
+  }, [locale])
+  const value = useMemo(() => ({ locale, setLocale, isFa: locale === 'fa', t: (value) => locale === 'fa' ? (translations[value] || value) : value }), [locale])
+  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
+}
+export function useLocale() {
+  const value = useContext(LocaleContext)
+  if (!value) throw new Error('useLocale must be used inside LocaleProvider')
+  return value
