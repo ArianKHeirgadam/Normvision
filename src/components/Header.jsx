@@ -77,7 +77,7 @@ export default function Header() {
         <nav aria-label="Mobile navigation">
           {navigationLinks(true)}
         </nav>
-        <div className="mobile-dock-controls">
+        <div className="mobile-controls">
           {languageSwitch}
           <button className="theme-toggle mobile-theme-toggle" type="button" onClick={toggleTheme}>
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}<span>{t(theme === 'dark' ? 'Light' : 'Dark')}</span>
