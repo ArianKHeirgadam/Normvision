@@ -759,3 +759,174 @@ footer li a:hover{color:var(--secondary)}
 :root:not([data-theme="light"]) .about-principle h3{
   color:#E1DCC9;
 }
+
+
+/* NORMVISION wordmark footer */
+.wordmark-footer{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  margin-top:var(--s2);
+  padding:clamp(3.5rem,7vw,6rem) 0 0;
+  border-top:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+}
+.wordmark-footer-inner{
+  position:relative;
+  z-index:1;
+  width:min(100% - 3rem,1200px);
+  margin-inline:auto;
+}
+.wordmark-footer-main{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:2.5rem;
+}
+.wordmark-footer-brand{max-width:390px}
+.wordmark-footer-name{
+  display:inline-block;
+  color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.8rem,3vw,2.35rem);
+  font-weight:500;
+  letter-spacing:-.055em;
+  line-height:1;
+  text-decoration:none;
+}
+.wordmark-footer-description{
+  max-width:34ch;
+  margin-top:1.1rem;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.85;
+}
+.wordmark-footer-status{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  margin-top:1.35rem;
+  color:var(--muted);
+  font-size:.82rem;
+}
+.wordmark-footer-status span{
+  width:7px;height:7px;border-radius:50%;
+  background:#6b9b75;
+  box-shadow:0 0 0 4px rgba(107,155,117,.12);
+}
+.wordmark-footer-desktop-nav{
+  display:none;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.5rem;
+}
+.wordmark-footer-column h2{
+  margin:0 0 1.15rem;
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.wordmark-footer-column ul,.wordmark-footer-mobile-nav ul{
+  display:grid;
+  gap:.55rem;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.wordmark-footer-column a,.wordmark-footer-mobile-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  color:var(--muted);
+  font-size:.92rem;
+  text-decoration:none;
+  transition:color .2s,transform .2s;
+}
+.wordmark-footer-column a:hover,.wordmark-footer-mobile-nav a:hover{
+  color:var(--text);
+  transform:translateX(3px);
+}
+.wordmark-footer-mobile-nav{display:grid;gap:.35rem}
+.wordmark-footer-disclosure{
+  border-bottom:1px solid var(--border);
+  border-radius:10px;
+  transition:background .2s;
+}
+.wordmark-footer-disclosure[open]{background:color-mix(in srgb,var(--text) 3%,transparent)}
+.wordmark-footer-disclosure summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:54px;
+  padding:0 .85rem;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+  list-style:none;
+}
+.wordmark-footer-disclosure summary::-webkit-details-marker{display:none}
+.wordmark-footer-disclosure summary svg{transition:transform .25s}
+.wordmark-footer-disclosure[open] summary svg{transform:rotate(45deg)}
+.wordmark-footer-mobile-nav ul{padding:0 .9rem .8rem}
+.wordmark-footer-mobile-nav a{min-height:42px}
+.wordmark-footer-legal{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.65rem 1.5rem;
+  margin-top:2.8rem;
+  padding:1.2rem 0 1rem;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:.8rem;
+}
+.wordmark-footer-legal p{margin:0}
+.wordmark-footer-legal>a{
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  color:inherit;
+  text-decoration:none;
+  transition:color .2s;
+}
+.wordmark-footer-legal>a:hover{color:var(--text)}
+.wordmark-footer-credit{margin-inline-start:auto}
+.wordmark-footer-oversized{
+  position:relative;
+  z-index:0;
+  overflow:hidden;
+  margin:-.12em 0 -.19em;
+  padding:0 .015em;
+  color:transparent;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(4.4rem,22vw,20rem);
+  font-weight:500;
+  letter-spacing:-.075em;
+  line-height:.88;
+  text-align:center;
+  white-space:nowrap;
+  user-select:none;
+  pointer-events:none;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--secondary) 32%,transparent),color-mix(in srgb,var(--secondary) 4%,transparent) 82%);
+  -webkit-background-clip:text;
+  background-clip:text;
+}
+[dir="rtl"] .wordmark-footer-legal{direction:rtl}
+@media(min-width:760px){
+  .wordmark-footer-main{grid-template-columns:minmax(230px, .9fr) minmax(0,1.5fr);gap:3rem}
+  .wordmark-footer-desktop-nav{display:grid}
+  .wordmark-footer-mobile-nav{display:none}
+  .wordmark-footer-legal{margin-top:3.5rem}
+}
+@media(max-width:480px){
+  .wordmark-footer-inner{width:calc(100% - 2.25rem)}
+  .wordmark-footer-oversized{font-size:25vw;letter-spacing:-.08em}
+  .wordmark-footer-legal{gap:.35rem .9rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .wordmark-footer *{transition:none!important}
+}
