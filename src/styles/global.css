@@ -1110,13 +1110,10 @@ footer li a:hover{color:var(--secondary)}
   [dir="rtl"] .about-expertise .why{padding:1.2rem 3.2rem 1.2rem 1rem}
 }
 
-/* Keep every roadmap label and control aligned with the site's typography. */
+/* Keep every roadmap text element and control on the exact site font stack. */
 .about-roadmap,
 .about-roadmap * {
-  font-family: inherit;
-}
-.about-roadmap button {
-  font-family: inherit;
+  font-family: var(--font) !important;
 }
 
 
