@@ -1304,3 +1304,33 @@ main,
 [dir="rtl"] .pcard:hover .pcard-open{transform:scaleX(-1) translate(2px,-2px)}
 @media(max-width:600px){.pbody{padding:1.1rem}.project-visual-caption{font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){.pcard,.project-visual img,.pcard-open{transition:none!important}}
+
+
+/* Project card hover: expand the image frame vertically, never zoom the photo */
+.pcard .project-visual{
+  height:172px;
+  aspect-ratio:auto;
+  flex:0 0 172px;
+  transition:height .48s cubic-bezier(.2,.75,.25,1),flex-basis .48s cubic-bezier(.2,.75,.25,1);
+}
+.pcard:hover .project-visual{
+  height:285px;
+  flex-basis:285px;
+}
+.pcard .project-visual img{
+  transform:none!important;
+  transition:filter .35s;
+}
+.pcard:hover .project-visual img{transform:none!important;filter:saturate(1.04)}
+.project-visual-detail{height:auto;aspect-ratio:16/8.5;flex:initial}
+@media(max-width:760px){
+  .pcard .project-visual{height:158px;flex-basis:158px}
+  .pcard:hover .project-visual{height:225px;flex-basis:225px}
+}
+@media(hover:none){
+  .pcard .project-visual{height:205px;flex-basis:205px}
+  .pcard:hover .project-visual{height:205px;flex-basis:205px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pcard .project-visual{transition:none}
+}
