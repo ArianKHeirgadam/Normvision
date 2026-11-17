@@ -134,8 +134,6 @@ const translations = {
   ,'We keep an eye on reliability and performance so issues can be identified early.':'قابلیت اطمینان و عملکرد را پایش می‌کنیم تا مشکلات زودتر شناسایی شوند.'
   ,'We support ongoing maintenance, optimization, and new capabilities as needs change.':'با تغییر نیازها، نگهداری مستمر، بهینه‌سازی و افزودن قابلیت‌های تازه را پشتیبانی می‌کنیم.'
   ,'Interactive engineering roadmap with Platform, Design, and Growth tracks':'نقشه راه تعاملی مهندسی با مسیرهای پلتفرم، طراحی و رشد'
-  
-  }
 
 }
 
